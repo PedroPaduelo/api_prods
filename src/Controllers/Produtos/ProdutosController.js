@@ -4,6 +4,7 @@ const connection = require('../../database/connection');
 module.exports = {
 
 
+    
       async Creat(request, response){
 
             // const { authorization } = request.headers;
@@ -18,6 +19,7 @@ module.exports = {
             const price = request.body.price
             const linkpage = request.body.linkpage
             const email_user = request.body.email_user
+            
 
             const linkpageinicio = "http://nommand.com.br/"
 
@@ -48,7 +50,7 @@ module.exports = {
 
             // const { authorization } = request.headers;
             // const [, token] = authorization.split(' ');
-
+            console.log("List Geral")
             try {
                   const listaDeCampanha = await connection.select("*")
                               .from('tbl_produtos')
@@ -64,9 +66,9 @@ module.exports = {
 
             // const { authorization } = request.headers;
             // const [, token] = authorization.split(' ');
-
+            console.log("Id list")
             const id = request.params.id
-            
+            console.log(id)
             try {
                   const listaDeCampanha = await connection.select("*")
                               .from('tbl_produtos')
@@ -78,6 +80,7 @@ module.exports = {
             } catch (error) {
                   console.log(error)
                   return response.json(false); 
+                  
             }
       },
 
