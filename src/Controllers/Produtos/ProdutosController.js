@@ -12,6 +12,7 @@ module.exports = {
 
             const produtcname = request.body.produtcname
             const produtcfile = request.body.produtcfile
+            const poductsubhead = request.body.poductsubhead
             const produtcdescription = request.body.produtcdescription
             const pixelfacebook = request.body.pixelfacebook
             const statusprodutc = request.body.statusprodutc
@@ -28,6 +29,7 @@ module.exports = {
                   const id = await connection('tbl_produtos').insert({
                         produtcname,
                         produtcfile,
+                        poductsubhead,
                         produtcdescription,
                         pixelfacebook,
                         statusprodutc,
@@ -92,6 +94,7 @@ module.exports = {
             const id = request.body.id
             const produtcname = request.body.produtcname
             const produtcfile = request.body.produtcfile
+            const poductsubhead = request.body.poductsubhead
             const produtcdescription = request.body.produtcdescription
             const pixelfacebook = request.body.pixelfacebook
             const statusprodutc = request.body.statusprodutc
@@ -104,6 +107,7 @@ module.exports = {
                   const result = await connection('tbl_produtos').where('id', id).update({
                         produtcname,
                         produtcfile,
+                        poductsubhead,
                         produtcdescription,
                         pixelfacebook,
                         statusprodutc,
