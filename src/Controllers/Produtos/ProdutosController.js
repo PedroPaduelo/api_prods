@@ -13,6 +13,7 @@ module.exports = {
             const produtcname = request.body.produtcname
             const produtcfile = request.body.produtcfile
             const poductsubhead = request.body.poductsubhead
+            const whatsvendedor = request.body.whatsvendedor
             const produtcdescription = request.body.produtcdescription
             const pixelfacebook = request.body.pixelfacebook
             const statusprodutc = request.body.statusprodutc
@@ -30,6 +31,7 @@ module.exports = {
                         produtcname,
                         produtcfile,
                         poductsubhead,
+                        whatsvendedor,
                         produtcdescription,
                         pixelfacebook,
                         statusprodutc,
@@ -95,6 +97,7 @@ module.exports = {
             const produtcname = request.body.produtcname
             const produtcfile = request.body.produtcfile
             const poductsubhead = request.body.poductsubhead
+            const whatsvendedor = request.body.whatsvendedor
             const produtcdescription = request.body.produtcdescription
             const pixelfacebook = request.body.pixelfacebook
             const statusprodutc = request.body.statusprodutc
@@ -108,6 +111,7 @@ module.exports = {
                         produtcname,
                         produtcfile,
                         poductsubhead,
+                        whatsvendedor,
                         produtcdescription,
                         pixelfacebook,
                         statusprodutc,

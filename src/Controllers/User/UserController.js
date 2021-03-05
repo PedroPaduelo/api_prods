@@ -1,9 +1,11 @@
 const connection = require('../../database/connection');
 const axios = require('axios');
+const Gmail = require('../../utils/ValidaGmail');
 
 // variaveis staticas
 const id_status = 1
 const id_tipouser = 1
+const id_org = 1
 
 // Mensagem de retorno
 let retorno = {}
@@ -11,29 +13,7 @@ retorno.mensagem = ""
 retorno.status = ""
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {
-
-
-
-
       async CreateUser(request, response){
       
             // Variaveis de Criação
@@ -44,7 +24,7 @@ module.exports = {
             const token = request.body.tokenId 
 
             // Busca dados do usuario
-            const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`)
+            const res = await Gmail.ValidaGmail(token)
 
             // Valida se o usuario foi retornado pelo end poit
             if(!res){
@@ -52,10 +32,10 @@ module.exports = {
             }
 
             // Dados enviados
-            const fistname = res.data.given_name || ''
-            const lastname = res.data.family_name || ''
-            const photoprofile = res.data.picture || ''
-            const email = res.data.email.toLowerCase()  || ''
+            const fistname = res.given_name || ''
+            const lastname = res.family_name || ''
+            const photoprofile = res.picture || ''
+            const email = res.email.toLowerCase()  || ''
 
             // Busca email para validar se o user ja ta na base
             const user = await connection('tbl_user').where('email', email).first();
@@ -70,6 +50,7 @@ module.exports = {
                               photoprofile,
                               id_status,
                               id_tipouser,
+                              id_org,
                               token,
                               created_at,
                               updated_at
@@ -186,8 +167,4 @@ module.exports = {
                               .where('email',email);
             return response.json(filas);
       },
-
-
-
-
 }
