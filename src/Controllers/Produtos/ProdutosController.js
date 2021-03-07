@@ -3,36 +3,40 @@ const connection = require('../../database/connection');
 
 module.exports = {
 
-
-    
       async Creat(request, response){
 
             // const { authorization } = request.headers;
             // const [, token] = authorization.split(' ');
 
             const produtcname = request.body.produtcname
-            const produtcfile = request.body.produtcfile
             const poductsubhead = request.body.poductsubhead
             const whatsvendedor = request.body.whatsvendedor
-            const produtcdescription = request.body.produtcdescription
+
+            const img1 = request.body.img1
+            const img2 = request.body.img2
+            const img3 = request.body.img3
+
+            const produtcdescription1 = request.body.produtcdescription1
+            const produtcdescription2 = request.body.produtcdescription2
+            const produtcdescription3 = request.body.produtcdescription3
             const pixelfacebook = request.body.pixelfacebook
             const statusprodutc = request.body.statusprodutc
             const linkbuy = request.body.linkbuy
             const price = request.body.price
             const linkpage = request.body.linkpage
             const email_user = request.body.email_user
-            
-
-            const linkpageinicio = "http://nommand.com.br/"
-
-            
+                        
             try {
                   const id = await connection('tbl_produtos').insert({
                         produtcname,
-                        produtcfile,
                         poductsubhead,
                         whatsvendedor,
-                        produtcdescription,
+                        img1,
+                        img2,
+                        img3,
+                        produtcdescription1,
+                        produtcdescription2,
+                        produtcdescription3,
                         pixelfacebook,
                         statusprodutc,
                         linkbuy,
@@ -40,7 +44,7 @@ module.exports = {
                         price,
                         linkpage,
                         email_user
-                  }, ['linkpage'])
+                  }, ['id'])
 
                   return response.json(id[0]);
 
@@ -95,10 +99,16 @@ module.exports = {
 
             const id = request.body.id
             const produtcname = request.body.produtcname
-            const produtcfile = request.body.produtcfile
             const poductsubhead = request.body.poductsubhead
             const whatsvendedor = request.body.whatsvendedor
-            const produtcdescription = request.body.produtcdescription
+
+            const img1 = request.body.img1
+            const img2 = request.body.img2
+            const img3 = request.body.img3
+
+            const produtcdescription1 = request.body.produtcdescription1
+            const produtcdescription2 = request.body.produtcdescription2
+            const produtcdescription3 = request.body.produtcdescription3
             const pixelfacebook = request.body.pixelfacebook
             const statusprodutc = request.body.statusprodutc
             const linkbuy = request.body.linkbuy
@@ -109,17 +119,22 @@ module.exports = {
             try {
                   const result = await connection('tbl_produtos').where('id', id).update({
                         produtcname,
-                        produtcfile,
                         poductsubhead,
                         whatsvendedor,
-                        produtcdescription,
+                        img1,
+                        img2,
+                        img3,
+                        produtcdescription1,
+                        produtcdescription2,
+                        produtcdescription3,
                         pixelfacebook,
                         statusprodutc,
                         linkbuy,
                         linkbuy,
                         price,
                         linkpage,
-                        email_user});     
+                        email_user
+                  });     
                   
                   
                   return response.json(true);
@@ -147,5 +162,4 @@ module.exports = {
                   return response.json(false); 
             }
       },
-
 }

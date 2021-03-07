@@ -129,6 +129,7 @@ module.exports = {
             // Vaila se o user retorno
             if(res){
                   const email = res.data.email.toLowerCase()  || ''
+                  console.log(email)
 
                   // Busca User cadastrado para retornar os dados
                   const user = await connection('view_users').where('email', email).first();

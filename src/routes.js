@@ -5,6 +5,7 @@ const authMiddleware = require('./Middleware/auth');
 
 const UserController = require('./Controllers/User/UserController')
 const ProdutosController = require('./Controllers/Produtos/ProdutosController')
+// const ImagensController = require('./Controllers/Imagens/ImagensController')
 
 const routes = express.Router();
 
@@ -21,6 +22,12 @@ routes.get('/ListProdutosById/:id', ProdutosController.ListId );
 routes.put('/UpdateProdutos', ProdutosController.Update );
 routes.delete('/DeleteProdutos/:id', ProdutosController.Delete );
 
+
+// routes.post('/CreatImagens', ImagensController.Creat );
+// routes.get('/ListImagens', ImagensController.List );
+// routes.get('/ListImagensById/:id_prod', ImagensController.ListidProd );
+// routes.put('/UpdateImagens', ImagensController.Update );
+// routes.delete('/DeleteImagens/:id', ImagensController.Delete );
 
 
 /**
