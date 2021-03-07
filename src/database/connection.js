@@ -5,7 +5,7 @@ const connection = knex({
   connection: {
         host : "postgresql-21633-0.cloudclusters.net",
         port: 21633,
-        user : "postgres",
+        user : "Nommand",
         password : "4063020",
         database : "gestaoprods",
   },
