@@ -58,10 +58,14 @@ module.exports = {
 
             // const { authorization } = request.headers;
             // const [, token] = authorization.split(' ');
-            console.log("List Geral")
+
+            const email = request.params.email
+            console.log(email)
+
             try {
                   const listaDeCampanha = await connection.select("*")
                               .from('tbl_produtos')
+                              .where("email_user", email)
                   return response.json(listaDeCampanha);
 
             } catch (error) {

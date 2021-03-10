@@ -17,7 +17,7 @@ routes.get('/ListFilasUser/:email', UserController.ListFilasUser );
 
 
 routes.post('/CreatProdutos', ProdutosController.Creat );
-routes.get('/ListProdutos', ProdutosController.List );
+routes.get('/ListProdutos/:email', ProdutosController.List );
 routes.get('/ListProdutosById/:id', ProdutosController.ListId );
 routes.put('/UpdateProdutos', ProdutosController.Update );
 routes.delete('/DeleteProdutos/:id', ProdutosController.Delete );
