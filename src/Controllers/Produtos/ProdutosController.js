@@ -178,6 +178,7 @@ module.exports = {
                   const countProd = await connection.count("*")
                               .from('tbl_produtos')
                               .where("email_user", email)
+                              .first()
 
                   console.log(countProd)
 
