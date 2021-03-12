@@ -21,6 +21,7 @@ routes.get('/ListProdutos/:email', ProdutosController.List );
 routes.get('/ListProdutosById/:id', ProdutosController.ListId );
 routes.put('/UpdateProdutos', ProdutosController.Update );
 routes.delete('/DeleteProdutos/:id', ProdutosController.Delete );
+routes.get('/CountProdUser/:email', ProdutosController.CountProdUser );
 
 
 // routes.post('/CreatImagens', ImagensController.Creat );

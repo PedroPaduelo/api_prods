@@ -166,4 +166,29 @@ module.exports = {
                   return response.json(false); 
             }
       },
+
+      async CountProdUser(request, response){
+
+            // const { authorization } = request.headers;
+            // const [, token] = authorization.split(' ');
+
+            const email = request.params.email
+
+            try {
+                  const countProd = await connection.count("*")
+                              .from('tbl_produtos')
+                              .where("email_user", email)
+
+                  console.log(countProd)
+
+                  return response.json(countProd);
+
+            } catch (error) {
+                  console.log(error)
+                  return response.json(false); 
+            }
+      },
+
+
+
 }

@@ -169,7 +169,8 @@ SELECT
 	tbl_org.nomeorg,
 
 	tbl_user.created_at,
-	tbl_user.updated_at
+	tbl_user.updated_at,
+	tbl_user.capacidade
 	
 FROM tbl_user 
 	left join tbl_tipo_user on tbl_user.id_tipouser = tbl_tipo_user.id
