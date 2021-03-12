@@ -162,6 +162,7 @@ SELECT
 	tbl_user.id_org,
 
 	tbl_user.token,
+	tbl_user.photoprofile,
 
 	tbl_status.descstatus,
 	tbl_tipo_user.desctipouser,
