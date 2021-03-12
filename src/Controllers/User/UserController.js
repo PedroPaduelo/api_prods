@@ -52,6 +52,7 @@ module.exports = {
                               id_tipouser,
                               id_org,
                               token,
+                              capacidade: 10, 
                               created_at,
                               updated_at
                         })
