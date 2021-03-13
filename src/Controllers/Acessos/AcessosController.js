@@ -1,4 +1,7 @@
 const connection = require('../../database/connection');
+const axios = require('axios');
+
+let url = `http://ip-api.com/json/`
 
 module.exports = {
 
@@ -6,6 +9,15 @@ module.exports = {
 
             // const { authorization } = request.headers;
             // const [, token] = authorization.split(' ');
+
+
+          
+            const ipv4 = request.body.ipv4
+            const res = await axios.get(`http://ip-api.com/json/${ipv4}`)
+ 
+            console.log(res)
+
+
 
             const devicer = request.body.devicer
             const provedor = request.body.provedor
