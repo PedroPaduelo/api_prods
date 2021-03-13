@@ -1,7 +1,5 @@
 const connection = require('../../database/connection');
-const axios = require('axios');
-
-let url = `http://ip-api.com/json/`
+const GeoLocation = require('../../utils/GeoLocation');
 
 module.exports = {
 
@@ -13,26 +11,22 @@ module.exports = {
 
           
             const ip = request.body.ip
-            const res = await axios.get(`http://ip-api.com/json/${ip}`)
+            const res = await GeoLocation.ValidaLocations(ip)
  
-            console.log(res.data)
-
-
 
             const devicer = request.body.devicer
             const data_acesso = request.body.data_acesso
             const hora_acesso = request.body.hora_acesso
             const id_prod = request.body.id_prod
 
-
-            const provedor = res.data.as
-            const country = res.data.country
-            const countrycode = res.data.countryCode
-            const lat = res.data.lat
-            const lon = res.data.lon
-            const regioncod = res.data.region
-            const regionname = res.data.regionName
-            const timezone = res.data.timezone
+            const provedor = res.as
+            const country = res.country
+            const countrycode = res.countryCode
+            const lat = res.lat
+            const lon = res.lon
+            const regioncod = res.region
+            const regionname = res.regionName
+            const timezone = res.timezone
 
             
                         
