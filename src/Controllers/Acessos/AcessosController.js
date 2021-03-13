@@ -11,10 +11,10 @@ module.exports = {
             // const [, token] = authorization.split(' ');
 
 
-            const locarionIP = await api.get(url);
-            console.log(locarionIP)
+          
 
-            const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`)
+            const res = await axios.get(url)
+            console.log(res)
 
             const devicer = request.body.devicer
             const provedor = request.body.provedor
