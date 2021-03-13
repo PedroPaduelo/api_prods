@@ -15,7 +15,7 @@ module.exports = {
             const ipv4 = request.body.ipv4
             const res = await axios.get(`http://ip-api.com/json/${ipv4}`)
  
-            console.log(res)
+            console.log(res.data)
 
 
 
