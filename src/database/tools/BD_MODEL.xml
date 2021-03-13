@@ -192,19 +192,19 @@
 </row>
 <row name="img2" null="1" autoincrement="0">
 <datatype>VARCHAR(5000)</datatype>
-</row>
+<default>NULL</default></row>
 <row name="img3" null="1" autoincrement="0">
 <datatype>VARCHAR(5000)</datatype>
-</row>
+<default>NULL</default></row>
 <row name="produtcdescription1" null="0" autoincrement="0">
 <datatype>VARCHAR(10000)</datatype>
 </row>
 <row name="produtcdescription2" null="1" autoincrement="0">
 <datatype>VARCHAR(5000)</datatype>
-</row>
+<default>NULL</default></row>
 <row name="produtcdescription3" null="1" autoincrement="0">
 <datatype>VARCHAR(5000)</datatype>
-</row>
+<default>NULL</default></row>
 <row name="pixelfacebook" null="1" autoincrement="0">
 <datatype>VARCHAR(200)</datatype>
 <default>NULL</default></row>
@@ -235,7 +235,7 @@
 <part>email_user</part>
 </key>
 </table>
-<table x="787" y="14" name="tbl_comentario">
+<table x="872" y="22" name="tbl_comentario">
 <row name="id" null="0" autoincrement="0">
 <datatype>INTEGER</datatype>
 </row>
@@ -247,6 +247,54 @@
 </row>
 <row name="created_at" null="0" autoincrement="0">
 <datatype>DATE</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="874" y="153" name="tbl_acessos">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="devicer" null="0" autoincrement="0">
+<datatype>VARCHAR(70)</datatype>
+</row>
+<row name="provedor" null="1" autoincrement="0">
+<datatype>VARCHAR(500)</datatype>
+</row>
+<row name="country" null="1" autoincrement="0">
+<datatype>VARCHAR(500)</datatype>
+</row>
+<row name="countryCode" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+</row>
+<row name="lat" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+</row>
+<row name="lon" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+</row>
+<row name="ip" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+</row>
+<row name="regionCod" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+</row>
+<row name="regionName" null="1" autoincrement="0">
+<datatype>VARCHAR(500)</datatype>
+</row>
+<row name="timezone" null="1" autoincrement="0">
+<datatype>VARCHAR(500)</datatype>
+</row>
+<row name="data_acesso" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+</row>
+<row name="hora_acesso" null="1" autoincrement="0">
+<datatype>TIME</datatype>
+</row>
+<row name="id_prod" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="tbl_produtos" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>

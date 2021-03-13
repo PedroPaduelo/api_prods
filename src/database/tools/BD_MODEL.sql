@@ -100,6 +100,26 @@ CREATE TABLE tbl_comentario (
 
 ALTER TABLE tbl_comentario ADD CONSTRAINT tbl_comentario_pkey PRIMARY KEY (id);
 
+CREATE TABLE tbl_acessos (
+ id BIGSERIAL,
+ devicer VARCHAR(70) NOT NULL,
+ provedor VARCHAR(500),
+ country VARCHAR(500),
+ countryCode VARCHAR(100),
+ lat VARCHAR(100),
+ lon VARCHAR(100),
+ ip VARCHAR(100),
+ regionCod VARCHAR(100),
+ regionName VARCHAR(500),
+ timezone VARCHAR(500),
+ data_acesso DATE,
+ hora_acesso TIME,
+ id_prod INTEGER
+);
+
+
+ALTER TABLE tbl_acessos ADD CONSTRAINT tbl_acessos_pkey PRIMARY KEY (id);
+
 ALTER TABLE tbl_user ADD CONSTRAINT tbl_user_id_status_fkey FOREIGN KEY (id_status) REFERENCES tbl_status(id);
 ALTER TABLE tbl_user ADD CONSTRAINT tbl_user_id_tipouser_fkey FOREIGN KEY (id_tipouser) REFERENCES tbl_tipo_user(id);
 ALTER TABLE tbl_user ADD CONSTRAINT tbl_user_id_org_fkey FOREIGN KEY (id_org) REFERENCES tbl_org(id);
@@ -107,6 +127,9 @@ ALTER TABLE tbl_servicos ADD CONSTRAINT tbl_servicos_id_org_fkey FOREIGN KEY (id
 ALTER TABLE tbl_rel_user_vs_servicos ADD CONSTRAINT tbl_rel_user_vs_servicos_email_user_fkey FOREIGN KEY (email_user) REFERENCES tbl_user(email);
 ALTER TABLE tbl_rel_user_vs_servicos ADD CONSTRAINT tbl_rel_user_vs_servicos_id_servicos_fkey FOREIGN KEY (id_servicos) REFERENCES tbl_servicos(id);
 ALTER TABLE tbl_produtos ADD CONSTRAINT tbl_produtos_email_user_fkey FOREIGN KEY (email_user) REFERENCES tbl_user(email);
+ALTER TABLE tbl_acessos ADD CONSTRAINT tbl_acessos_id_prod_fkey FOREIGN KEY (id_prod) REFERENCES tbl_produtos(id);
+
+
 
 
 

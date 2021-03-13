@@ -180,8 +180,6 @@ module.exports = {
                               .where("email_user", email)
                               .first()
 
-                  console.log(countProd)
-
                   return response.json(countProd);
 
             } catch (error) {
