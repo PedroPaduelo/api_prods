@@ -10,12 +10,6 @@ module.exports = {
             // const { authorization } = request.headers;
             // const [, token] = authorization.split(' ');
 
-
-          
-
-            const res = await axios.get(url)
-            console.log(res)
-
             const devicer = request.body.devicer
             const provedor = request.body.provedor
             const country = request.body.country
