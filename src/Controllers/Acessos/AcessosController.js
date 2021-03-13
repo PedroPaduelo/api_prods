@@ -20,7 +20,6 @@ module.exports = {
 
 
             const devicer = request.body.devicer
-            const ip = request.body.ip
             const data_acesso = request.body.data_acesso
             const hora_acesso = request.body.hora_acesso
             const id_prod = request.body.id_prod
