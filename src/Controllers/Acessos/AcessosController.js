@@ -1,5 +1,7 @@
 const connection = require('../../database/connection');
+const axios = require('axios');
 
+let url = `https://ip-api.com/json/`
 
 module.exports = {
 
@@ -7,6 +9,12 @@ module.exports = {
 
             // const { authorization } = request.headers;
             // const [, token] = authorization.split(' ');
+
+
+            const locarionIP = await api.get(url);
+            console.log(locarionIP)
+
+            const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`)
 
             const devicer = request.body.devicer
             const provedor = request.body.provedor
