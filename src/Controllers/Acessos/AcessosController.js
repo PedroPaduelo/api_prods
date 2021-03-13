@@ -1,7 +1,7 @@
 const connection = require('../../database/connection');
 const axios = require('axios');
 
-let url = `https://ip-api.com/json/`
+let url = `http://ip-api.com/json/`
 
 module.exports = {
 
