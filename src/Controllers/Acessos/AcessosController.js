@@ -20,18 +20,22 @@ module.exports = {
 
 
             const devicer = request.body.devicer
-            const provedor = request.body.provedor
-            const country = request.body.country
-            const countrycode = request.body.countrycode
-            const lat = request.body.lat
-            const lon = request.body.lon
             const ip = request.body.ip
-            const regioncod = request.body.regioncod
-            const regionname = request.body.regionname
-            const timezone = request.body.timezone
             const data_acesso = request.body.data_acesso
             const hora_acesso = request.body.hora_acesso
             const id_prod = request.body.id_prod
+            
+
+            const provedor = res.data.provedor
+            const country = res.data.country
+            const countrycode = res.data.countrycode
+            const lat = res.data.lat
+            const lon = res.data.lon
+            const regioncod = res.data.regioncod
+            const regionname = res.data.regionname
+            const timezone = res.data.timezone
+
+            
                         
             try {
                   const id = await connection('tbl_acessos').insert({
