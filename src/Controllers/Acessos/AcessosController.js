@@ -14,8 +14,8 @@ module.exports = {
             const lat = request.body.lat
             const lon = request.body.lon
             const ip = request.body.ip
-            const regionCod = request.body.regionCod
-            const regionName = request.body.regionName
+            const regioncod = request.body.regioncod
+            const regionname = request.body.regionname
             const timezone = request.body.timezone
             const data_acesso = request.body.data_acesso
             const hora_acesso = request.body.hora_acesso
@@ -29,8 +29,8 @@ module.exports = {
                         lat,
                         lon,
                         ip,
-                        regionCod,
-                        regionName,
+                        regioncod,
+                        regionname,
                         timezone,
                         data_acesso,
                         hora_acesso,
