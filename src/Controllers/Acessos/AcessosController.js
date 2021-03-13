@@ -12,8 +12,8 @@ module.exports = {
 
 
           
-            const ipv4 = request.body.ipv4
-            const res = await axios.get(`http://ip-api.com/json/${ipv4}`)
+            const ip = request.body.ip
+            const res = await axios.get(`http://ip-api.com/json/${ip}`)
  
             console.log(res.data)
 
@@ -24,7 +24,7 @@ module.exports = {
             const data_acesso = request.body.data_acesso
             const hora_acesso = request.body.hora_acesso
             const id_prod = request.body.id_prod
-            
+
 
             const provedor = res.data.provedor
             const country = res.data.country
