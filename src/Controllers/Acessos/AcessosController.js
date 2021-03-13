@@ -23,7 +23,7 @@ module.exports = {
             const id_prod = request.body.id_prod
                         
             try {
-                  const id = await connection('tbl_produtos').insert({
+                  const id = await connection('tbl_acessos').insert({
                         devicer,
                         provedor,
                         country,
@@ -57,7 +57,7 @@ module.exports = {
 
             try {
                   const listaDeCampanha = await connection.select("*")
-                              .from('tbl_produtos')
+                              .from('tbl_acessos')
                               .where("email_user", email)
                   return response.json(listaDeCampanha);
 
@@ -76,7 +76,7 @@ module.exports = {
             console.log(id)
             try {
                   const listaDeCampanha = await connection.select("*")
-                              .from('tbl_produtos')
+                              .from('tbl_acessos')
                               .where("id", id)
                               .first()
 
@@ -98,7 +98,7 @@ module.exports = {
 
             try {
                   const countProd = await connection.count("*")
-                              .from('tbl_produtos')
+                              .from('tbl_acessos')
                               .where("email_user", email)
                               .first()
 
