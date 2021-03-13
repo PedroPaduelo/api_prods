@@ -11,6 +11,7 @@ module.exports = {
             const devicer = request.body.devicer
             const provedor = request.body.provedor
             const country = request.body.country
+            const countrycode = request.body.countrycode
             const lat = request.body.lat
             const lon = request.body.lon
             const ip = request.body.ip
@@ -26,6 +27,7 @@ module.exports = {
                         devicer,
                         provedor,
                         country,
+                        countrycode,
                         lat,
                         lon,
                         ip,

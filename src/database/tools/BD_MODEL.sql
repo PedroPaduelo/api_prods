@@ -109,11 +109,11 @@ CREATE TABLE tbl_acessos (
  lat VARCHAR(100),
  lon VARCHAR(100),
  ip VARCHAR(100),
- regionCod VARCHAR(100),
- regionName VARCHAR(500),
+ regioncod VARCHAR(100),
+ regionname VARCHAR(500),
  timezone VARCHAR(500),
- data_acesso DATE,
- hora_acesso TIME,
+ data_acesso VARCHAR(100),
+ hora_acesso VARCHAR(100),
  id_prod INTEGER
 );
 
