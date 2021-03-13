@@ -25,13 +25,13 @@ module.exports = {
             const id_prod = request.body.id_prod
 
 
-            const provedor = res.data.provedor
+            const provedor = res.data.as
             const country = res.data.country
-            const countrycode = res.data.countrycode
+            const countrycode = res.data.countryCode
             const lat = res.data.lat
             const lon = res.data.lon
-            const regioncod = res.data.regioncod
-            const regionname = res.data.regionname
+            const regioncod = res.data.region
+            const regionname = res.data.regionName
             const timezone = res.data.timezone
 
             
