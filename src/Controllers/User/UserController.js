@@ -97,13 +97,9 @@ module.exports = {
             const { authorization } = request.headers;
             const [, token] = authorization.split(' ');
 
-            const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?idtoken=${token}`)
+            // const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?idtoken=${token}`)
 
-            if(!res){
-                  return response.json(false);
-            }
-
-            if(res){
+            if(true){
                   const user = await connection('view_users').where('token', token).first();
 
                   retorno.user = user
