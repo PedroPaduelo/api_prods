@@ -97,7 +97,7 @@ module.exports = {
             const { authorization } = request.headers;
             const [, token] = authorization.split(' ');
 
-            const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`)
+            const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?idtoken=${token}`)
 
 
             if(!res){
