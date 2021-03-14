@@ -28,7 +28,7 @@ module.exports = {
 
             // Valida se o usuario foi retornado pelo end poit
             if(!res){
-                 return response.json('Erro no tokem fornecido!!!');
+                 return response.json(false);
             }
 
             // Dados enviados
@@ -99,6 +99,12 @@ module.exports = {
 
             const res = await axios.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`)
 
+
+            if(!res){
+                  return response.json(false);
+            }
+
+
             if(res){
                   const user = await connection('view_users').where('token', token).first();
 
@@ -107,12 +113,9 @@ module.exports = {
                   retorno.status = "success"
 
                   return response.json(retorno)
+                  
             }else{
-
-                  retorno.mensagem = "Erro ao logar!!! Contate o Adiministrador"
-                  retorno.status = "erro"
-
-                  return response.json(retorno)
+                  return response.json(false);
             }
       },
 
