@@ -228,6 +228,65 @@ FROM tbl_rel_user_vs_servicos
 
 
 
+CREATE OR REPLACE VIEW view_rel_prod_vs_acessos AS
+SELECT 
+	tbl_acessos.id_prod,
+	count(tbl_acessos.id_prod) as contagem_prod,
+	tbl_produtos.produtcname ,
+	tbl_produtos.poductsubhead ,
+	tbl_produtos.img1 ,
+	tbl_produtos.img2 ,
+	tbl_produtos.img3 ,
+	tbl_produtos.produtcdescription1 ,
+	tbl_produtos.produtcdescription2 ,
+	tbl_produtos.produtcdescription3 ,
+	tbl_produtos.whatsvendedor ,
+	tbl_produtos.linkbuy ,
+	tbl_produtos.price ,
+	tbl_produtos.linkpage ,
+	tbl_produtos.email_user 
+	
+FROM tbl_produtos
+	left join tbl_acessos on tbl_produtos.id = tbl_acessos.id_prod
+
+group by tbl_acessos.id_prod,
+		tbl_produtos.produtcname ,
+		tbl_produtos.poductsubhead ,
+		tbl_produtos.img1 ,
+		tbl_produtos.img2 ,
+		tbl_produtos.img3 ,
+		tbl_produtos.produtcdescription1 ,
+		tbl_produtos.produtcdescription2 ,
+		tbl_produtos.produtcdescription3 ,
+		tbl_produtos.whatsvendedor ,
+		tbl_produtos.linkbuy ,
+		tbl_produtos.price ,
+		tbl_produtos.linkpage ,
+		tbl_produtos.email_user
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -64,7 +64,7 @@ module.exports = {
 
             try {
                   const listaDeCampanha = await connection.select("*")
-                              .from('tbl_produtos')
+                              .from('view_rel_prod_vs_acessos')
                               .where("email_user", email)
                   return response.json(listaDeCampanha);
 
