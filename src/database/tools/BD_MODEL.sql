@@ -244,7 +244,8 @@ SELECT
 	tbl_produtos.linkbuy ,
 	tbl_produtos.price ,
 	tbl_produtos.linkpage ,
-	tbl_produtos.email_user 
+	tbl_produtos.email_user ,
+	tbl_produtos.id 
 	
 FROM tbl_produtos
 	left join tbl_acessos on tbl_produtos.id = tbl_acessos.id_prod
@@ -262,7 +263,8 @@ group by tbl_acessos.id_prod,
 		tbl_produtos.linkbuy ,
 		tbl_produtos.price ,
 		tbl_produtos.linkpage ,
-		tbl_produtos.email_user
+		tbl_produtos.email_user ,
+		tbl_produtos.id 
 ;
 
 
